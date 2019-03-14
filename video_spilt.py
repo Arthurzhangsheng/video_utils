@@ -7,9 +7,9 @@ import os
 终止时间         
 '''
 #------------------需要修改的部分-------------
-video_path = r"D:\seagate2\SNIS-556_FHD.mkv"#视频所在的目录
-start_time = "00:00:00"
-stop_time =  "03:57:25"
+video_path = r"E:\西游记女儿国\西游记女儿国.mp4"#视频所在的目录
+start_time = "01:40:00"
+stop_time =  "01:50:00"
 #---------------以上是可以修改的部分-----------
 
 #分割出视频所在的目录完整名称，如 "c:/video"
@@ -40,8 +40,8 @@ while os.path.exists(os.path.join(split_dir,filename + houzhuiming)):
 output_name = os.path.join(split_dir,filename + houzhuiming)
 
 
-def spilt_video(video_path, start_time, stop_time,output_name):       
-    subprocess.call(["ffmpeg", "-i", video_path, "-vcodec", "copy", "-acodec", "copy", "-ss", start_time, "-to", stop_time, output_name, "-y"])
+def spilt_video(video_path, start_time, stop_time,output_name): 
+    subprocess.call(["ffmpeg", "-ss", start_time, "-to", stop_time,"-accurate_seek", "-i", video_path, "-vcodec", "copy", "-acodec", "copy", "-avoid_negative_ts","1",output_name, "-y"])
 
 
 if __name__ == "__main__":
