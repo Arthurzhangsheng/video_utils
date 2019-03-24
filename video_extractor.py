@@ -17,7 +17,7 @@ pic_out_dir = root_dir + "/" +"frames"
 if not os.path.isdir(pic_out_dir):
     os.makedirs(pic_out_dir)
 
-format_list = [".mp4", ".avi", ".mkv", ".flv"]#其他视频格式应该也可以,需要的话加进列表中即可
+format_list = [".mp4", ".avi", ".mkv", ".flv", ".mov"]#其他视频格式应该也可以,需要的话加进列表中即可
 file_list = []
 
 def getfile(root_dir):
